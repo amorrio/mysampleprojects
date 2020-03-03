@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6616BF71240E6E3900DB4767 /* FindPlacesNearMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF6F240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodeld */; };
+		6616BF9B240E6EE500DB4767 /* Place+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF8C240E6EE400DB4767 /* Place+CoreDataClass.m */; };
+		6616BF9C240E6EE500DB4767 /* Place+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF8E240E6EE400DB4767 /* Place+CoreDataProperties.m */; };
+		6616BF9D240E6EE500DB4767 /* Search+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF90240E6EE400DB4767 /* Search+CoreDataClass.m */; };
+		6616BF9E240E6EE500DB4767 /* Search+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF92240E6EE400DB4767 /* Search+CoreDataProperties.m */; };
+		6616BF9F240E6EE500DB4767 /* UserLocation+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF94240E6EE400DB4767 /* UserLocation+CoreDataClass.m */; };
+		6616BFA0240E6EE500DB4767 /* UserLocation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF96240E6EE400DB4767 /* UserLocation+CoreDataProperties.m */; };
+		6616BFA1240E6EE500DB4767 /* UserLocationSearch+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF98240E6EE400DB4767 /* UserLocationSearch+CoreDataClass.m */; };
+		6616BFA2240E6EE500DB4767 /* UserLocationSearch+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF9A240E6EE400DB4767 /* UserLocationSearch+CoreDataProperties.m */; };
+		6616BFA5240E6F0E00DB4767 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */; };
 		66FD3566240A1481001E85F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FD3565240A1481001E85F7 /* AppDelegate.m */; };
 		66FD3569240A1481001E85F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FD3568240A1481001E85F7 /* ViewController.m */; };
 		66FD356C240A1481001E85F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FD356A240A1481001E85F7 /* Main.storyboard */; };
@@ -16,6 +26,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6616BF70240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindPlacesNearMe.xcdatamodel; sourceTree = "<group>"; };
+		6616BF8B240E6EE400DB4767 /* Place+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+CoreDataClass.h"; sourceTree = "<group>"; };
+		6616BF8C240E6EE400DB4767 /* Place+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+CoreDataClass.m"; sourceTree = "<group>"; };
+		6616BF8D240E6EE400DB4767 /* Place+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6616BF8E240E6EE400DB4767 /* Place+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6616BF8F240E6EE400DB4767 /* Search+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Search+CoreDataClass.h"; sourceTree = "<group>"; };
+		6616BF90240E6EE400DB4767 /* Search+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Search+CoreDataClass.m"; sourceTree = "<group>"; };
+		6616BF91240E6EE400DB4767 /* Search+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Search+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6616BF92240E6EE400DB4767 /* Search+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Search+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6616BF93240E6EE400DB4767 /* UserLocation+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserLocation+CoreDataClass.h"; sourceTree = "<group>"; };
+		6616BF94240E6EE400DB4767 /* UserLocation+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserLocation+CoreDataClass.m"; sourceTree = "<group>"; };
+		6616BF95240E6EE400DB4767 /* UserLocation+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserLocation+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6616BF96240E6EE400DB4767 /* UserLocation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserLocation+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6616BF97240E6EE400DB4767 /* UserLocationSearch+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserLocationSearch+CoreDataClass.h"; sourceTree = "<group>"; };
+		6616BF98240E6EE400DB4767 /* UserLocationSearch+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserLocationSearch+CoreDataClass.m"; sourceTree = "<group>"; };
+		6616BF99240E6EE400DB4767 /* UserLocationSearch+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserLocationSearch+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6616BF9A240E6EE400DB4767 /* UserLocationSearch+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserLocationSearch+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6616BFA3240E6F0E00DB4767 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		66FD3561240A1481001E85F7 /* FindPlacesNearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPlacesNearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66FD3564240A1481001E85F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66FD3565240A1481001E85F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,6 +68,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6616BF8A240E6EE400DB4767 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6616BF8B240E6EE400DB4767 /* Place+CoreDataClass.h */,
+				6616BF8C240E6EE400DB4767 /* Place+CoreDataClass.m */,
+				6616BF8D240E6EE400DB4767 /* Place+CoreDataProperties.h */,
+				6616BF8E240E6EE400DB4767 /* Place+CoreDataProperties.m */,
+				6616BF8F240E6EE400DB4767 /* Search+CoreDataClass.h */,
+				6616BF90240E6EE400DB4767 /* Search+CoreDataClass.m */,
+				6616BF91240E6EE400DB4767 /* Search+CoreDataProperties.h */,
+				6616BF92240E6EE400DB4767 /* Search+CoreDataProperties.m */,
+				6616BF93240E6EE400DB4767 /* UserLocation+CoreDataClass.h */,
+				6616BF94240E6EE400DB4767 /* UserLocation+CoreDataClass.m */,
+				6616BF95240E6EE400DB4767 /* UserLocation+CoreDataProperties.h */,
+				6616BF96240E6EE400DB4767 /* UserLocation+CoreDataProperties.m */,
+				6616BF97240E6EE400DB4767 /* UserLocationSearch+CoreDataClass.h */,
+				6616BF98240E6EE400DB4767 /* UserLocationSearch+CoreDataClass.m */,
+				6616BF99240E6EE400DB4767 /* UserLocationSearch+CoreDataProperties.h */,
+				6616BF9A240E6EE400DB4767 /* UserLocationSearch+CoreDataProperties.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		66FD3558240A1481001E85F7 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +110,8 @@
 		66FD3563240A1481001E85F7 /* FindPlacesNearMe */ = {
 			isa = PBXGroup;
 			children = (
+				6616BF8A240E6EE400DB4767 /* Models */,
+				6616BF6F240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodeld */,
 				66FD3564240A1481001E85F7 /* AppDelegate.h */,
 				66FD3565240A1481001E85F7 /* AppDelegate.m */,
 				66FD3567240A1481001E85F7 /* ViewController.h */,
@@ -67,6 +121,8 @@
 				66FD3572240A1483001E85F7 /* LaunchScreen.storyboard */,
 				66FD3575240A1483001E85F7 /* Info.plist */,
 				66FD3576240A1483001E85F7 /* main.m */,
+				6616BFA3240E6F0E00DB4767 /* CoreDataHelper.h */,
+				6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */,
 			);
 			path = FindPlacesNearMe;
 			sourceTree = "<group>";
@@ -141,9 +197,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6616BF9F240E6EE500DB4767 /* UserLocation+CoreDataClass.m in Sources */,
+				6616BFA0240E6EE500DB4767 /* UserLocation+CoreDataProperties.m in Sources */,
+				6616BF9B240E6EE500DB4767 /* Place+CoreDataClass.m in Sources */,
+				6616BF9D240E6EE500DB4767 /* Search+CoreDataClass.m in Sources */,
 				66FD3569240A1481001E85F7 /* ViewController.m in Sources */,
+				6616BFA1240E6EE500DB4767 /* UserLocationSearch+CoreDataClass.m in Sources */,
 				66FD3577240A1483001E85F7 /* main.m in Sources */,
+				6616BFA2240E6EE500DB4767 /* UserLocationSearch+CoreDataProperties.m in Sources */,
+				6616BF9C240E6EE500DB4767 /* Place+CoreDataProperties.m in Sources */,
+				6616BF71240E6E3900DB4767 /* FindPlacesNearMe.xcdatamodeld in Sources */,
+				6616BFA5240E6F0E00DB4767 /* CoreDataHelper.m in Sources */,
 				66FD3566240A1481001E85F7 /* AppDelegate.m in Sources */,
+				6616BF9E240E6EE500DB4767 /* Search+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +405,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6616BF6F240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6616BF70240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodel */,
+			);
+			currentVersion = 6616BF70240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodel */;
+			path = FindPlacesNearMe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 66FD3559240A1481001E85F7 /* Project object */;
 }
