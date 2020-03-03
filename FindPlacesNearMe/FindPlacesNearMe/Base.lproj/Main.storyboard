@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vOe-w7-5Ob">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="BCX-Q8-P5d"/>
+                                </connections>
+                            </mapView>
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search Places Here" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L49-B8-MZU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="LWS-op-v7g"/>
+                                </connections>
+                            </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="IkC-D1-788">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwG-3A-9Z3">
+                                <rect key="frame" x="354" y="742" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="EpW-iI-MLE"/>
+                                    <constraint firstAttribute="width" secondItem="WwG-3A-9Z3" secondAttribute="height" id="eSp-C1-0fZ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQm-tW-rLZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiH-Cq-GyM">
+                                <rect key="frame" x="354" y="802" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kiH-Cq-GyM" secondAttribute="height" id="Ztx-pf-FVd"/>
+                                    <constraint firstAttribute="width" constant="40" id="ahR-aq-hgg"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ResetPosition"/>
+                                <connections>
+                                    <action selector="resetButonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yRp-BU-Gif"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vOe-w7-5Ob" firstAttribute="top" secondItem="L49-B8-MZU" secondAttribute="bottom" id="4OH-A3-OrS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kiH-Cq-GyM" secondAttribute="bottom" constant="20" id="8uA-ua-Khz"/>
+                            <constraint firstItem="IkC-D1-788" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A9b-V6-v0l"/>
+                            <constraint firstItem="L49-B8-MZU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="D0o-8K-EBh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vOe-w7-5Ob" secondAttribute="bottom" id="Stn-Gw-9dh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kiH-Cq-GyM" secondAttribute="trailing" constant="20" id="Xfi-Pc-mp4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WwG-3A-9Z3" secondAttribute="trailing" constant="20" id="Ymj-av-Vce"/>
+                            <constraint firstItem="kiH-Cq-GyM" firstAttribute="top" secondItem="WwG-3A-9Z3" secondAttribute="bottom" constant="20" id="e27-NI-9EB"/>
+                            <constraint firstItem="L49-B8-MZU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fhl-NP-WQh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vOe-w7-5Ob" secondAttribute="trailing" id="ggq-cm-dyG"/>
+                            <constraint firstItem="IkC-D1-788" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iE7-ed-SEB"/>
+                            <constraint firstItem="vOe-w7-5Ob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="m7h-gg-O9X"/>
+                            <constraint firstItem="L49-B8-MZU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vun-q1-Kee"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="vOe-w7-5Ob" id="ieH-Ar-8mu"/>
+                        <outlet property="refreshButton" destination="WwG-3A-9Z3" id="iqP-pk-20S"/>
+                        <outlet property="resetButton" destination="kiH-Cq-GyM" id="v9J-ug-rRS"/>
+                        <outlet property="searchBar" destination="L49-B8-MZU" id="1kC-Ww-ewA"/>
+                        <outlet property="searchingIndicator" destination="IkC-D1-788" id="ZD0-cf-xjN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Refresh" width="25" height="25"/>
+        <image name="ResetPosition" width="25" height="25"/>
+    </resources>
+</document>
