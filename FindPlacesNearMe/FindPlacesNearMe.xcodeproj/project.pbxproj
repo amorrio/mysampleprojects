@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6616BF71240E6E3900DB4767 /* FindPlacesNearMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF6F240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodeld */; };
+		6616BFA5240E6F0E00DB4767 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */; };
 		66FD3566240A1481001E85F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FD3565240A1481001E85F7 /* AppDelegate.m */; };
 		66FD3569240A1481001E85F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FD3568240A1481001E85F7 /* ViewController.m */; };
 		66FD356C240A1481001E85F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FD356A240A1481001E85F7 /* Main.storyboard */; };
@@ -16,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6616BF70240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindPlacesNearMe.xcdatamodel; sourceTree = "<group>"; };
+		6616BFA3240E6F0E00DB4767 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		66FD3561240A1481001E85F7 /* FindPlacesNearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPlacesNearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66FD3564240A1481001E85F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66FD3565240A1481001E85F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 		66FD3563240A1481001E85F7 /* FindPlacesNearMe */ = {
 			isa = PBXGroup;
 			children = (
+				6616BF6F240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodeld */,
 				66FD3564240A1481001E85F7 /* AppDelegate.h */,
 				66FD3565240A1481001E85F7 /* AppDelegate.m */,
 				66FD3567240A1481001E85F7 /* ViewController.h */,
@@ -67,6 +73,8 @@
 				66FD3572240A1483001E85F7 /* LaunchScreen.storyboard */,
 				66FD3575240A1483001E85F7 /* Info.plist */,
 				66FD3576240A1483001E85F7 /* main.m */,
+				6616BFA3240E6F0E00DB4767 /* CoreDataHelper.h */,
+				6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */,
 			);
 			path = FindPlacesNearMe;
 			sourceTree = "<group>";
@@ -143,6 +151,8 @@
 			files = (
 				66FD3569240A1481001E85F7 /* ViewController.m in Sources */,
 				66FD3577240A1483001E85F7 /* main.m in Sources */,
+				6616BF71240E6E3900DB4767 /* FindPlacesNearMe.xcdatamodeld in Sources */,
+				6616BFA5240E6F0E00DB4767 /* CoreDataHelper.m in Sources */,
 				66FD3566240A1481001E85F7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +349,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6616BF6F240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6616BF70240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodel */,
+			);
+			currentVersion = 6616BF70240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodel */;
+			path = FindPlacesNearMe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 66FD3559240A1481001E85F7 /* Project object */;
 }
