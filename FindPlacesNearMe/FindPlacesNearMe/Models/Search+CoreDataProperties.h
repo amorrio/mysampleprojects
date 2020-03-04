@@ -2,10 +2,14 @@
 //  Search+CoreDataProperties.h
 //  FindPlacesNearMe
 //
-//  Copyright © 2020 Amor Rio. All rights reserved.
+//  Created by Mobile OS on 4/3/2020.
+//  Copyright © 2020 myproject. All rights reserved.
+//
 //
 
 #import "Search+CoreDataClass.h"
+
+@class UserLocationSearch;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,7 +18,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Search *> *)fetchRequest;
 
-@property (nullable, nonatomic, retain) NSObject *searchString;
+@property (nullable, nonatomic, copy) NSString *searchString;
+@property (nullable, nonatomic, retain) NSSet<UserLocationSearch *> *searches;
+
+@end
+
+@interface Search (CoreDataGeneratedAccessors)
+
+- (void)addSearchesObject:(UserLocationSearch *)value;
+- (void)removeSearchesObject:(UserLocationSearch *)value;
+- (void)addSearches:(NSSet<UserLocationSearch *> *)values;
+- (void)removeSearches:(NSSet<UserLocationSearch *> *)values;
 
 @end
 

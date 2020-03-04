@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		6616BF71240E6E3900DB4767 /* FindPlacesNearMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6616BF6F240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodeld */; };
 		6616BFA5240E6F0E00DB4767 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */; };
+		66DF3755240F76E0002966D6 /* Place+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DF3746240F76E0002966D6 /* Place+CoreDataClass.m */; };
+		66DF3756240F76E0002966D6 /* Place+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DF3748240F76E0002966D6 /* Place+CoreDataProperties.m */; };
+		66DF3757240F76E0002966D6 /* Search+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DF374A240F76E0002966D6 /* Search+CoreDataClass.m */; };
+		66DF3758240F76E0002966D6 /* Search+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DF374C240F76E0002966D6 /* Search+CoreDataProperties.m */; };
+		66DF3759240F76E0002966D6 /* UserLocation+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DF374E240F76E0002966D6 /* UserLocation+CoreDataClass.m */; };
+		66DF375A240F76E0002966D6 /* UserLocation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DF3750240F76E0002966D6 /* UserLocation+CoreDataProperties.m */; };
+		66DF375B240F76E0002966D6 /* UserLocationSearch+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DF3752240F76E0002966D6 /* UserLocationSearch+CoreDataClass.m */; };
+		66DF375C240F76E0002966D6 /* UserLocationSearch+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DF3754240F76E0002966D6 /* UserLocationSearch+CoreDataProperties.m */; };
 		66FD3566240A1481001E85F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FD3565240A1481001E85F7 /* AppDelegate.m */; };
 		66FD3569240A1481001E85F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FD3568240A1481001E85F7 /* ViewController.m */; };
 		66FD356C240A1481001E85F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FD356A240A1481001E85F7 /* Main.storyboard */; };
@@ -21,6 +29,22 @@
 		6616BF70240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindPlacesNearMe.xcdatamodel; sourceTree = "<group>"; };
 		6616BFA3240E6F0E00DB4767 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		66DF3745240F76E0002966D6 /* Place+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+CoreDataClass.h"; sourceTree = "<group>"; };
+		66DF3746240F76E0002966D6 /* Place+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+CoreDataClass.m"; sourceTree = "<group>"; };
+		66DF3747240F76E0002966D6 /* Place+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+CoreDataProperties.h"; sourceTree = "<group>"; };
+		66DF3748240F76E0002966D6 /* Place+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+CoreDataProperties.m"; sourceTree = "<group>"; };
+		66DF3749240F76E0002966D6 /* Search+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Search+CoreDataClass.h"; sourceTree = "<group>"; };
+		66DF374A240F76E0002966D6 /* Search+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Search+CoreDataClass.m"; sourceTree = "<group>"; };
+		66DF374B240F76E0002966D6 /* Search+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Search+CoreDataProperties.h"; sourceTree = "<group>"; };
+		66DF374C240F76E0002966D6 /* Search+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Search+CoreDataProperties.m"; sourceTree = "<group>"; };
+		66DF374D240F76E0002966D6 /* UserLocation+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserLocation+CoreDataClass.h"; sourceTree = "<group>"; };
+		66DF374E240F76E0002966D6 /* UserLocation+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserLocation+CoreDataClass.m"; sourceTree = "<group>"; };
+		66DF374F240F76E0002966D6 /* UserLocation+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserLocation+CoreDataProperties.h"; sourceTree = "<group>"; };
+		66DF3750240F76E0002966D6 /* UserLocation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserLocation+CoreDataProperties.m"; sourceTree = "<group>"; };
+		66DF3751240F76E0002966D6 /* UserLocationSearch+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserLocationSearch+CoreDataClass.h"; sourceTree = "<group>"; };
+		66DF3752240F76E0002966D6 /* UserLocationSearch+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserLocationSearch+CoreDataClass.m"; sourceTree = "<group>"; };
+		66DF3753240F76E0002966D6 /* UserLocationSearch+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserLocationSearch+CoreDataProperties.h"; sourceTree = "<group>"; };
+		66DF3754240F76E0002966D6 /* UserLocationSearch+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserLocationSearch+CoreDataProperties.m"; sourceTree = "<group>"; };
 		66FD3561240A1481001E85F7 /* FindPlacesNearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPlacesNearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66FD3564240A1481001E85F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66FD3565240A1481001E85F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,6 +68,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66DF3744240F76E0002966D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66DF3745240F76E0002966D6 /* Place+CoreDataClass.h */,
+				66DF3746240F76E0002966D6 /* Place+CoreDataClass.m */,
+				66DF3747240F76E0002966D6 /* Place+CoreDataProperties.h */,
+				66DF3748240F76E0002966D6 /* Place+CoreDataProperties.m */,
+				66DF3749240F76E0002966D6 /* Search+CoreDataClass.h */,
+				66DF374A240F76E0002966D6 /* Search+CoreDataClass.m */,
+				66DF374B240F76E0002966D6 /* Search+CoreDataProperties.h */,
+				66DF374C240F76E0002966D6 /* Search+CoreDataProperties.m */,
+				66DF374D240F76E0002966D6 /* UserLocation+CoreDataClass.h */,
+				66DF374E240F76E0002966D6 /* UserLocation+CoreDataClass.m */,
+				66DF374F240F76E0002966D6 /* UserLocation+CoreDataProperties.h */,
+				66DF3750240F76E0002966D6 /* UserLocation+CoreDataProperties.m */,
+				66DF3751240F76E0002966D6 /* UserLocationSearch+CoreDataClass.h */,
+				66DF3752240F76E0002966D6 /* UserLocationSearch+CoreDataClass.m */,
+				66DF3753240F76E0002966D6 /* UserLocationSearch+CoreDataProperties.h */,
+				66DF3754240F76E0002966D6 /* UserLocationSearch+CoreDataProperties.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		66FD3558240A1481001E85F7 = {
 			isa = PBXGroup;
 			children = (
@@ -63,18 +110,19 @@
 		66FD3563240A1481001E85F7 /* FindPlacesNearMe */ = {
 			isa = PBXGroup;
 			children = (
+				66DF3744240F76E0002966D6 /* Models */,
 				6616BF6F240E6E3800DB4767 /* FindPlacesNearMe.xcdatamodeld */,
 				66FD3564240A1481001E85F7 /* AppDelegate.h */,
 				66FD3565240A1481001E85F7 /* AppDelegate.m */,
 				66FD3567240A1481001E85F7 /* ViewController.h */,
 				66FD3568240A1481001E85F7 /* ViewController.m */,
+				6616BFA3240E6F0E00DB4767 /* CoreDataHelper.h */,
+				6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */,
 				66FD356A240A1481001E85F7 /* Main.storyboard */,
 				66FD3570240A1483001E85F7 /* Assets.xcassets */,
 				66FD3572240A1483001E85F7 /* LaunchScreen.storyboard */,
 				66FD3575240A1483001E85F7 /* Info.plist */,
 				66FD3576240A1483001E85F7 /* main.m */,
-				6616BFA3240E6F0E00DB4767 /* CoreDataHelper.h */,
-				6616BFA4240E6F0E00DB4767 /* CoreDataHelper.m */,
 			);
 			path = FindPlacesNearMe;
 			sourceTree = "<group>";
@@ -149,11 +197,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66DF3756240F76E0002966D6 /* Place+CoreDataProperties.m in Sources */,
+				66DF375A240F76E0002966D6 /* UserLocation+CoreDataProperties.m in Sources */,
 				66FD3569240A1481001E85F7 /* ViewController.m in Sources */,
+				66DF3755240F76E0002966D6 /* Place+CoreDataClass.m in Sources */,
+				66DF3757240F76E0002966D6 /* Search+CoreDataClass.m in Sources */,
 				66FD3577240A1483001E85F7 /* main.m in Sources */,
 				6616BF71240E6E3900DB4767 /* FindPlacesNearMe.xcdatamodeld in Sources */,
+				66DF3758240F76E0002966D6 /* Search+CoreDataProperties.m in Sources */,
+				66DF3759240F76E0002966D6 /* UserLocation+CoreDataClass.m in Sources */,
 				6616BFA5240E6F0E00DB4767 /* CoreDataHelper.m in Sources */,
+				66DF375C240F76E0002966D6 /* UserLocationSearch+CoreDataProperties.m in Sources */,
 				66FD3566240A1481001E85F7 /* AppDelegate.m in Sources */,
+				66DF375B240F76E0002966D6 /* UserLocationSearch+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

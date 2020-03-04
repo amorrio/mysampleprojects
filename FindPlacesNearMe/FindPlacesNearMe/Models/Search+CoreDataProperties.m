@@ -2,7 +2,9 @@
 //  Search+CoreDataProperties.m
 //  FindPlacesNearMe
 //
-//  Copyright © 2020 Amor Rio. All rights reserved.
+//  Created by Mobile OS on 4/3/2020.
+//  Copyright © 2020 myproject. All rights reserved.
+//
 //
 
 #import "Search+CoreDataProperties.h"
@@ -14,5 +16,6 @@
 }
 
 @dynamic searchString;
+@dynamic searches;
 
 @end

@@ -6,8 +6,9 @@
 //
 
 #import "ViewController.h"
-
-
+#import "CoreDataHelper.h"
+#import "Place+CoreDataProperties.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 //views
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSArray *currentAnnotations;
 @property (strong, nonatomic) NSString *currentSearchString;
+@property (strong, nonatomic) CoreDataHelper *dbHelper;
 
 @end
 
@@ -41,7 +43,11 @@
             self.mapView.showsUserLocation = YES;
         }
     }
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.dbHelper = [[CoreDataHelper alloc] initWithManagedObjectContext:appDelegate.persistentContainer.viewContext];
 }
+
 - (IBAction)refreshButtonHit:(id)sender {
     [self performSearch];
 }
@@ -194,6 +200,13 @@
     
     [self.mapView removeAnnotations:self.currentAnnotations];
     self.currentAnnotations = nil;
+    NSArray *places = [self.dbHelper placesForSearchString:self.currentSearchString coordinate:self.mapView.userLocation.location.coordinate];
+    if (places && [places count] > 0){
+        self.currentAnnotations = [self annotationsForPlaces:places];
+        [self addAnnotationsToMapView:self.currentAnnotations];
+        return;
+    }
+    
     self.refreshButton.enabled = NO;
     self.resetButton.enabled = NO;
     //show activity indicator while searching
@@ -229,55 +242,44 @@
     return [restAPIURLComponents URL];
 }
 
-- (NSArray*)annotationsForSearchResult:(NSDictionary *)searchResult
+-(NSArray *)annotationsForPlaces:(NSArray *)places
 {
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     
-    NSDictionary *result = [searchResult objectForKey:@"results"];
-    NSArray *placeItems = [result objectForKey:@"items"];
-
-    if (placeItems != nil)
-    {
-        for (NSDictionary *placeItem in placeItems)
+    for (Place *place in places){
+         CLLocationCoordinate2D coordinate;
+        coordinate.latitude = place.latitude;
+        coordinate.longitude =place.longitude;
+        
+   
+        NSString *distanceUnit = @"meters";
+        double distanceDivisor = 1.0f;
+        if ((place.distance - 1000.0f) > 0.0001f )
         {
-            NSString *title  = [placeItem objectForKey:@"title"];
-            NSString *vicinity = [placeItem objectForKey:@"vicinity"];
+            distanceDivisor = 1000;
+            distanceUnit = @"km";
             
-            if (vicinity != nil)
-            {
-                vicinity = [vicinity stringByReplacingOccurrencesOfString:@"<br/>" withString:@", "];
-            }
-            //the title from the search resul
-            title = [NSString stringWithFormat:@"%@ %@", title, vicinity];
-            
-            NSArray *position =[placeItem objectForKey:@"position"];
-            CLLocationCoordinate2D coordinate;
-            coordinate.latitude = [[position objectAtIndex:0] doubleValue];
-            coordinate.longitude = [[position objectAtIndex:1] doubleValue];
-            
-            NSNumber *distance = [placeItem objectForKey:@"distance"];
-            NSString *distanceUnit = @"meters";
-            double distanceDivisor = 1.0f;
-            if (([distance doubleValue] - 1000.0f) > 0.0001f )
-            {
-                distanceDivisor = 1000;
-                distanceUnit = @"km";
-                
-            }
-            //set subtitle to distance description from location of user
-            NSString *subTitle = [NSString stringWithFormat:@"%g %@ away", [distance doubleValue]/distanceDivisor, distanceUnit];
-            
-            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-            annotation.coordinate = coordinate;
-            //title and subtitle will show in callout when pins are tapped
-            annotation.title = title;
-            annotation.subtitle = subTitle;
-            
-            [annotations addObject:annotation];
         }
+        //set subtitle to distance description from location of user
+        NSString *subTitle = [NSString stringWithFormat:@"%g %@ away", place.distance/distanceDivisor, distanceUnit];
+        
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        annotation.coordinate = coordinate;
+        //title and subtitle will show in callout when pins are tapped
+        annotation.title = [NSString stringWithFormat:@"%@ %@", place.title, place.vicinity];
+        annotation.subtitle = subTitle;
+        
+        
+        [annotations addObject:annotation];
     }
-    
     return annotations;
+}
+
+- (NSArray*)annotationsForSearchResult:(NSDictionary *)searchResult
+{
+    NSArray *places = [self.dbHelper placesForSearchResult:searchResult searchString:self.currentSearchString coordinate:self.mapView.userLocation.location.coordinate];
+    
+    return [self annotationsForPlaces:places];
 }
 
 -(void)showErrorSearchAlertWithMessage:(NSString *)errorMessage
