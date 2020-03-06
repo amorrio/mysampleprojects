@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Place" representedClassName="Place" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES">
+            <userInfo/>
+        </attribute>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES">
+            <userInfo/>
+        </attribute>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES">
+            <userInfo/>
+        </attribute>
+        <attribute name="title" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="vicinity" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <relationship name="sourceSearch" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserLocationSearch" inverseName="places" inverseEntity="UserLocationSearch">
+            <userInfo/>
+        </relationship>
+    </entity>
+    <entity name="Search" representedClassName="Search" syncable="YES">
+        <attribute name="searchString" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <relationship name="searches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserLocationSearch" inverseName="searchTerm" inverseEntity="UserLocationSearch">
+            <userInfo/>
+        </relationship>
+    </entity>
+    <entity name="UserLocation" representedClassName="UserLocation" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES">
+            <userInfo/>
+        </attribute>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES">
+            <userInfo/>
+        </attribute>
+        <relationship name="searches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserLocationSearch" inverseName="location" inverseEntity="UserLocationSearch">
+            <userInfo/>
+        </relationship>
+    </entity>
+    <entity name="UserLocationSearch" representedClassName="UserLocationSearch" syncable="YES">
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserLocation" inverseName="searches" inverseEntity="UserLocation">
+            <userInfo/>
+        </relationship>
+        <relationship name="places" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Place" inverseName="sourceSearch" inverseEntity="Place">
+            <userInfo/>
+        </relationship>
+        <relationship name="searchTerm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Search" inverseName="searches" inverseEntity="Search">
+            <userInfo/>
+        </relationship>
+    </entity>
+    <elements>
+        <element name="Place" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="Search" positionX="-9" positionY="81" width="128" height="75"/>
+        <element name="UserLocation" positionX="-36" positionY="45" width="128" height="90"/>
+        <element name="UserLocationSearch" positionX="18" positionY="90" width="128" height="90"/>
+    </elements>
+</model>
