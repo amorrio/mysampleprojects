@@ -16,6 +16,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var searchingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var locationPermissionWarning: UILabel!
     
     let annotationViewIdentifier = "MyAnnotation"
     var locationManager : CLLocationManager?
@@ -26,33 +27,42 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.locationManager = CLLocationManager()
+        self.locationManager?.delegate = self
+        
         if CLLocationManager.locationServicesEnabled()
         {
-            self.locationManager = CLLocationManager()
-            self.locationManager?.delegate = self
             self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             self.locationManager?.requestWhenInUseAuthorization()
             
             if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways ||
                 CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse
             {
+                //show user location only if location permission is granted
                 self.mapView.showsUserLocation = true
             }
-            
+        }
+        else {
+            self.searchBar.isUserInteractionEnabled = false
+            self.locationPermissionWarning.isHidden = false
         }
         
         self.mapView.register(MKPinAnnotationView.self, forAnnotationViewWithReuseIdentifier: self.annotationViewIdentifier)
+        
         // Do any additional setup after loading the view.
         let delegate : AppDelegate  = UIApplication.shared.delegate as! AppDelegate
         self.dbhelper = CoreDataHelper(context: delegate.persistentContainer.viewContext)
     }
     
     
-    
+    ///The refreshButton reperforms the search given the search string that is currently in the search bar
+    ///This is in case the user have changed location and wants to update the search result for user's new location
     @IBAction func refreshButtonHit(_ sender: Any) {
         self.performSearch()
     }
     
+    ///The resetButton resets the map view to the initial view after a searcj
+    ///That is the mapView is zoomed in such a way that all search result pins are visible in the map
     @IBAction func resetButtonHit(_ sender: Any) {
         if let annotations = self.currentAnnotations, annotations.count > 0 {
             
@@ -86,6 +96,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
         self.didEndSearch()
+        //enable only the reset b
         self.resetButton.isEnabled = true
     }
     
@@ -96,6 +107,29 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse
         {
             self.mapView.showsUserLocation = true
+            self.searchBar.isUserInteractionEnabled = true
+            self.locationPermissionWarning.isHidden = true
+            if self.currentSearchString != nil {
+                self.refreshButton.isEnabled = true
+            }
+                        
+            if let annotations = self.currentAnnotations {
+                self.mapView.addAnnotations(annotations)
+                self.mapView .showAnnotations(annotations, animated: true)
+                self.resetButton.isEnabled = true
+            }
+        }
+        else {
+            self.mapView.showsUserLocation = false
+            self.searchBar.isUserInteractionEnabled = false
+            self.refreshButton.isEnabled = false
+            self.locationPermissionWarning.isHidden = false
+            if let annotations = self.currentAnnotations {
+                self.mapView.removeAnnotations(annotations)
+                self.resetButton.isEnabled = false
+            }
+            
+    
         }
     }
     
@@ -121,7 +155,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     //MARK: UtilityMethods
-    
+    /**
+     Adds the annotation view to the map view
+     */
     func addAnnotationToMapView(annotations : [MKAnnotation]?){
         if annotations == nil || annotations?.count == 0
         {
@@ -136,7 +172,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     func performSearch() {
-        
         if let searchString = self.currentSearchString {
             if let annotations = self.currentAnnotations {
                 self.mapView.removeAnnotations(annotations)

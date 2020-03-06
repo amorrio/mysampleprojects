@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,6 +35,7 @@
                             </searchBar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="IkC-D1-788">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwG-3A-9Z3">
                                 <rect key="frame" x="354" y="742" width="40" height="40"/>
@@ -60,17 +59,27 @@
                                     <action selector="resetButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AUi-CD-kSd"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enable location services and grant permission to be able to perform search" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpC-WY-jaR">
+                                <rect key="frame" x="0.0" y="100" width="414" height="41"/>
+                                <color key="backgroundColor" white="0.7478863441780822" alpha="0.50551155821917804" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vOe-w7-5Ob" firstAttribute="top" secondItem="L49-B8-MZU" secondAttribute="bottom" id="4OH-A3-OrS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kiH-Cq-GyM" secondAttribute="bottom" constant="20" id="8uA-ua-Khz"/>
+                            <constraint firstItem="FpC-WY-jaR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9nu-Pc-Fic"/>
                             <constraint firstItem="IkC-D1-788" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A9b-V6-v0l"/>
                             <constraint firstItem="L49-B8-MZU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="D0o-8K-EBh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FpC-WY-jaR" secondAttribute="trailing" id="E2H-N5-UNn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vOe-w7-5Ob" secondAttribute="bottom" id="Stn-Gw-9dh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kiH-Cq-GyM" secondAttribute="trailing" constant="20" id="Xfi-Pc-mp4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WwG-3A-9Z3" secondAttribute="trailing" constant="20" id="Ymj-av-Vce"/>
                             <constraint firstItem="kiH-Cq-GyM" firstAttribute="top" secondItem="WwG-3A-9Z3" secondAttribute="bottom" constant="20" id="e27-NI-9EB"/>
+                            <constraint firstItem="FpC-WY-jaR" firstAttribute="top" secondItem="L49-B8-MZU" secondAttribute="bottom" id="fQg-lU-9yQ"/>
                             <constraint firstItem="L49-B8-MZU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fhl-NP-WQh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vOe-w7-5Ob" secondAttribute="trailing" id="ggq-cm-dyG"/>
                             <constraint firstItem="IkC-D1-788" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iE7-ed-SEB"/>
@@ -80,6 +89,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="locationPermissionWarning" destination="FpC-WY-jaR" id="rgx-zE-tif"/>
                         <outlet property="mapView" destination="vOe-w7-5Ob" id="0gZ-JV-7ea"/>
                         <outlet property="refreshButton" destination="WwG-3A-9Z3" id="uGd-Kf-gPL"/>
                         <outlet property="resetButton" destination="kiH-Cq-GyM" id="2rV-nE-7vm"/>
